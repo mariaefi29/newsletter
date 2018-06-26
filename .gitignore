@@ -1,0 +1,8 @@
+# mac hidden files
+.DS_Store
+
+*.exe
+
+app.yaml
+
+# dep files
