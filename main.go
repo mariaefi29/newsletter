@@ -20,7 +20,7 @@ func sendNewPostInfo(sub []models.Email, post models.Post) error {
 	m := gomail.NewMessage()
 	greeting := "<h3>Уважаемый подписчик!<br></h3>"
 	signature := "<p>С уважением,<br>Мария Ефименко</p>"
-	content := fmt.Sprintf("<p>На сайте <a href=`www.marialife.com`>www.marialife.com</a> опубликован новый пост под названием <a href=`http://marialife.com/posts/show/%s`><strong>%s</strong></a> в категории <a href=`http://marialife.com/category/%s`>%s!</a></p>", post.IDstr, post.Name, post.CategoryEng, post.Category)
+	content := fmt.Sprintf("<p>На сайте <a href=\"www.marialife.com\">www.marialife.com</a> опубликован новый пост под названием <a href=\"http://marialife.com/posts/show/%s\"><strong>%s</strong></a> в категории <a href=\"http://marialife.com/category/%s\">%s!</a></p>", post.IDstr, post.Name, post.CategoryEng, post.Category)
 	for _, r := range sub {
 		m.SetHeader("From", "no-reply@example.com")
 		m.SetAddressHeader("To", r.EmailAddress, "Уважаемый подписчик!")
